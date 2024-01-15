@@ -1,13 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+
+float radiansDegreesConverter (float degree)
+{
+    float radians;
+    radians = (float)M_PI*degree/180;
+
+    return radians;
+}
 
 int main (void)
 {
-    float array[90];
+    float array[90], radians;
 
     for (int i = 0; i < 90; i++)
     {
-        array[i] = i;
+        radians = radiansDegreesConverter(i);
+        array[i] = radians;
     }
 
     // Show the value of the array
